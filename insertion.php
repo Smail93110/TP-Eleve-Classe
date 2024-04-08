@@ -30,10 +30,30 @@ $requeteDiplome->bindParam(':nom_diplome', $diplome_nom);
 // Exécution des requêtes
 $insertISok = $requeteClasse->execute() && $requeteDiplome->execute() && $requeteEleve->execute();
 
-$message = ($insertISok) ? 'Les données ont été ajoutées dans la base de données' : 'Erreur lors de l\'ajout des données';
+// $message = ($insertISok) ? 'Les données ont été ajoutées dans la base de données' : 'Erreur lors de l\'ajout des données';
 ?>
 
-<!DOCTYPE html>
+<?php
+
+$bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
+
+$recuperation = $bdd->query('SELECT * FROM eleve');
+
+
+
+$recuperation->execute();
+
+if ($recuperation) {
+header('Location: index.php');
+exit();
+} else {
+echo "la redirection na pas marché";
+}
+
+
+?>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -45,7 +65,7 @@ $message = ($insertISok) ? 'Les données ont été ajoutées dans la base de don
 <h1><?php echo $message; ?></h1>
 
 </body>
-</html>
+</html> -->
 
 
 

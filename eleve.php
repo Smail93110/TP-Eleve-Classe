@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@
 
 
 <div class="login-box">
-  <form method="POST" action="insertion.php">
+  <form method="POST"  action="insertion.php">
     <h1 style="color: white;">Creation de l'eleve</h1>
     <div class="user-box">
       <input type="text" name="Nom" required="">
@@ -67,15 +68,18 @@
     <center>
 
 
+    <input type="submit" value="Envoyer le formulaire"  class="bouton-personnalise" />
 
 
 
     </center>
     <span></span>
 
+  
+
+
   </form>
 </div>
-
 
 
 </body>
