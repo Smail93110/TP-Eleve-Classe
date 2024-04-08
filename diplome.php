@@ -36,7 +36,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
             <input type="text" name="diplome" required="">
             <label>Ajout du diplome</label>
         </div>
-        
+        test
         <input type="submit" value="Envoyer le formulaire"  class="bouton-personnalise" />
     </form>
 </div>
