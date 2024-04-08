@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +23,8 @@
   </style>
 </head>
 <body>
+
+
 
 <div class="login-box">
   <form method="POST" action="insertion.php">
@@ -61,12 +65,21 @@
       </select>
     </div>
     <center>
-      <input type="submit" value="Envoyer le formulaire" class="bouton-personnalise" />
+
+
+
+
+
     </center>
     <span></span>
+
   </form>
 </div>
 
 
+
 </body>
 </html>
+
+
+

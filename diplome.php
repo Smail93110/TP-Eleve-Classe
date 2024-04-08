@@ -5,6 +5,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,6 +40,9 @@ $bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
         <input type="submit" value="Envoyer le formulaire"  class="bouton-personnalise" />
     </form>
 </div>
+
+
+
 </body>
 </html>
 

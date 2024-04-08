@@ -48,13 +48,7 @@ $message = ($insertISok) ? 'Les données ont été ajoutées dans la base de don
 </html>
 
 
-<?php
- 
-   
-    header("Location: eleve.php");
-    exit(); 
 
-?>
 
 
 
