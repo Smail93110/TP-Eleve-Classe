@@ -19,16 +19,13 @@ $requeteEleve->bindParam(':date_naissance', $date);
 $requeteEleve->bindParam(':classe_id', $classe_id);
 $requeteEleve->bindParam(':diplome_id', $diplome_id);
 
-// Préparation de la requête pour l'insertion dans la table 'classe'
-$requeteClasse = $bdd->prepare("INSERT INTO classe (nom_classe) VALUES (:nom_classe)");
-$requeteClasse->bindParam(':nom_classe', $classe_nom);
 
 // Préparation de la requête pour l'insertion dans la table 'diplome'
 $requeteDiplome = $bdd->prepare("INSERT INTO diplome (nom_diplome) VALUES (:nom_diplome)");
 $requeteDiplome->bindParam(':nom_diplome', $diplome_nom);
 
 // Exécution des requêtes
-$insertISok = $requeteClasse->execute() && $requeteDiplome->execute() && $requeteEleve->execute();
+$insertISok = $requeteEleve->execute()   && $requeteDiplome->execute() ;
 
 // $message = ($insertISok) ? 'Les données ont été ajoutées dans la base de données' : 'Erreur lors de l\'ajout des données';
 ?>
@@ -51,32 +48,17 @@ echo "la redirection na pas marché";
 }
 
 
+
 ?>
 
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-   
-<h1><?php echo $message; ?></h1>
-
-</body>
-</html> -->
 
 
 
 
 
+ <!-- USE tp;
 
-
-
-<!-- USE tp;
-
-CREATE TABLE diplome (
+ CREATE TABLE diplome (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nom_diplome VARCHAR(255) NOT NULL
 );
@@ -97,4 +79,4 @@ CREATE TABLE eleve (
     diplome_id INT,
     FOREIGN KEY (classe_id) REFERENCES classe(id),
     FOREIGN KEY (diplome_id) REFERENCES diplome(id)
-); -->
+); 

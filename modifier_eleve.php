@@ -1,3 +1,26 @@
+<?php
+
+$bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
+
+$pdo = $bdd->prepare('SELECT * FROM eleve WHERE id=:id ');
+
+
+$pdo->bindValue(':id', $_GET['id']);
+
+
+//execution de la requete
+$execute = $pdo->execute();
+
+
+//on recupere le resultat
+
+$contact = $pdo->fetch();
+// var_dump($contact);
+
+
+?>;
+
+
 
 
 
@@ -7,7 +30,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./formulaire.css">
-  <title>Creation de l'eleve</title>
+  <title>Modification eleve</title>
   <style>
     .bouton-personnalise {
       background-color: #4CAF50; /* Vert */
@@ -28,47 +51,52 @@
 
 
 <div class="login-box">
-  <form method="POST"  action="insertion.php">
-    <h1 style="color: white;">Creation de l'eleve</h1>
+  <form method="POST"  action="insertion_modifier_eleve.php">
+    <h1 style="color: white;">Mofication de l'eleve </h1>
     <div class="user-box">
-      <input type="text" name="Nom" required="">
+
+    <input type="hidden" name="id" value="<?php echo $contact['id'] ?>" />
+
+      <input type="text" name="nom" value=" <?= $contact['nom']   ?>" >
       <label>Nom</label>
     </div>
     <div class="user-box">
-      <input type="text" name="Prenom" required="">
+      <input type="text" name="prenom"  value="<?= $contact['prenom']   ?>">
       <label>Mot de passe</label>
     </div>
     <div class="user-box">
-      <input type="text" name="Ville" required="">
+      <input type="text" name="ville"  value="<?= $contact['ville']   ?>">
       <label>Ville</label>
     </div>
     <div class="user-box">
-      <input type="text" name="sexe" required="">
+      <input type="text" name="sexe"  value="<?= $contact['sexe']   ?>">
       <label>Sexe</label>
     </div>
     <div class="user-box">
-      <input type="date" name="date" required=""> 
+      <input type="date" name="date_naissance"  value="<?= $contact['date_naissance']   ?>"> 
     </div>
     <div class="user-box">
       <div class="classe">
         <label>Choisie ta classe</label>
       </div>
       <select name="classe_id">
-        <option value=""> </option>
+        <option value="<?= $contact['classe_id']   ?>"> </option>
       </select>
     </div>
+   
     <div class="user-box">
       <div class="diplomes">
         <label>Choisie ton diplome</label>
       </div>
       <select name="diplome_id">
-        <option value=""> </option>
+        <option value="<?= $contact['diplome_id']   ?>"> </option>
       </select>
     </div>
+    
     <center>
 
 
-    <input type="submit" value="Envoyer le formulaire"  class="bouton-personnalise" />
+    <input type="submit" value="Enregistrer les Modification"  class="bouton-personnalise" />
 
 
 

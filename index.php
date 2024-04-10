@@ -12,8 +12,8 @@
             <h1>Bienvenue dans les formulaires d'inscription</h1>
         </div>
         <div class="links">
-            <a href="eleve.php">Vers la page élève</a>
-            <a href="diplome.php">Vers la page diplôme</a>
+            <a href="create_eleve.php">Vers la page élève</a>
+            <a href="creation_classe.php">Vers la page diplôme</a>
         </div>
     </div>
        
@@ -28,10 +28,15 @@
     <div class="containers">
 
    <?php foreach ($recuperation as $resultat): ?>
-    <a href="./delete.php?id=<?php echo $resultat['id']; ?>">
+    <a href="./delete_eleve.php?id=<?php echo $resultat['id']; ?>">
     <button>Supprimer</button>
 </a>
 <hr>
+
+
+<a href="./modifier_eleve.php?id=<?php echo $resultat['id']; ?>" style="color: red;">modifier</a>
+
+
 
 
   <form action="insertion.php" method="POST"> 

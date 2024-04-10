@@ -30,13 +30,12 @@ $bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
 </head>
 <body>
 <div class="login-box">
-    <h1 style="color: white;"> Insertion des Diplomes Fournies </h1>
-    <form method="POST" action="insertion.php">
+    <h1 style="color: white;"> Ajout de la classe créer </h1>
+    <form method="POST" action="insertion_classe.php">
         <div class="user-box">
-            <input type="text" name="diplome" required="">
-            <label>Ajout du diplome</label>
+            <input type="text" name="nom_classe" required="">
+            <label>Ajout des classe </label>
         </div>
-        test
         <input type="submit" value="Envoyer le formulaire"  class="bouton-personnalise" />
     </form>
 </div>
