@@ -28,7 +28,7 @@
 
 
 <div class="login-box">
-  <form method="POST"  action="insertion.php">
+  <form method="POST"  action="insertion_eleve.php">
     <h1 style="color: white;">Creation de l'eleve</h1>
     <div class="user-box">
       <input type="text" name="Nom" >

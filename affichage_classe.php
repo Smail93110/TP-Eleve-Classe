@@ -12,7 +12,7 @@
             <h1>Tous les classes créer</h1>
         </div>
         <div class="links">
-            <a href="eleve.php">Vers la page élève</a>
+            <a href="index.php">Vers la page élève</a>
             <a href="creation_classe.php">Vers la creation de la classe </a>
         </div>
     </div>

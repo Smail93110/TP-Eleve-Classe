@@ -17,43 +17,36 @@
         </div>
     </div>
        
-       <?php
+    <?php
         $bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
         $recuperation = $bdd->query('SELECT * FROM eleve');
-            
-
-        ?>
-   
+    ?>
 
     <div class="containers">
+        <?php foreach ($recuperation as $resultat): ?>
+            <div class="eleve">
+                <ul>
+                <li>Nom: <?php echo $resultat['nom']; ?></li>
 
-   <?php foreach ($recuperation as $resultat): ?>
-    <a href="./delete_eleve.php?id=<?php echo $resultat['id']; ?>">
-    <button>Supprimer</button>
-</a>
-<hr>
-
-
-<a href="./modifier_eleve.php?id=<?php echo $resultat['id']; ?>" style="color: red;">modifier</a>
-
-
-
-
-  <form action="insertion.php" method="POST"> 
-    <input name="id" value="<?php echo $resultat['id'] ?>" />
-
-        <h2><?php echo $resultat['nom']; ?></h2>
-        <h3><?php echo $resultat['prenom']; ?></h3>
-        <h3><?php echo $resultat['ville']; ?></h3>
-        <h3><?php echo $resultat['sexe']; ?></h3>
-        <h3><?php echo ($resultat['date_naissance']); ?></h3>
-        <h3><?php echo $resultat['classe_id']; ?></h3>
-        <h3><?php echo $resultat['diplome_id']; ?></h3>
-        <!-- Il reste 3 jours. -->
-<?php endforeach; ?>
-
-</div>
-
+                    <li>Prénom: <?php echo $resultat['prenom']; ?></li>
+                    <li>Ville: <?php echo $resultat['ville']; ?></li>
+                    <li>Sexe: <?php echo $resultat['sexe']; ?></li>
+                    <li>Date de naissance: <?php echo $resultat['date_naissance']; ?></li>
+                    <li>La classe: <?php echo $resultat['classe_id']; ?></li>
+                    <li>Le diplôme: <?php echo $resultat['diplome_id']; ?></li>
+                </ul>
+                <div class="actions">
+                    <a href="./delete_eleve.php?id=<?php echo $resultat['id']; ?>">
+                        <button>Supprimer</button>
+                    </a>
+                    <a href="./modifier_eleve.php?id=<?php echo $resultat['id']; ?>" style="color: red;">
+                        Modifier
+                    </a>
+                </div>
+            </div>
+            <hr>
+        <?php endforeach; ?>
+    </div>
 
 </body>
 </html>
