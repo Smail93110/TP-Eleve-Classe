@@ -13,7 +13,7 @@
         </div>
         <div class="links">
             <a href="create_eleve.php">Vers la page élève</a>
-            <a href="creation_classe.php">Vers la page diplôme</a>
+            <a href="creation_classe.php">Vers la creation de la classe</a>
         </div>
     </div>
        
