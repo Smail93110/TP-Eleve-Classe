@@ -4,49 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de Garde</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="affichage_classe.css">
 </head>
 <body>
     <div class="container">
         <div class="title">
-            <h1>Tous les classes créer</h1>
+            <h1>Toutes les classes créées</h1>
         </div>
         <div class="links">
             <a href="index.php">Vers la page élève</a>
-            <a href="creation_classe.php">Vers la creation de la classe </a>
+            <a href="creation_classe.php">Vers la création de la classe</a>
         </div>
     </div>
        
-
-       <?php
+    <div class="containers">
+        <?php
         $bdd = new PDO('mysql:host=localhost;dbname=tp', 'root', '');
-        $recuperation_classe = $bdd->query('SELECT * FROM classe' )->fetchAll();
-            
-        // var_dump($recuperation_classe->fetchAll());
+        $recuperation_classe = $bdd->query('SELECT * FROM classe');
 
         ?>
-   
 
-    <div class="containers">
-
-   <?php foreach ($recuperation_classe as $resultat): 
-     ?>
-    
-    <a href="./delete_classe.php?id=<?php echo $resultat['id']; ?>">
-    <button>Supprimer</button>
-</a>
-<hr>
-
-
-  <form action="insertion_classe.php" method="POST"> 
-    <input name="id" value="<?php echo $resultat['id'] ?>" />
-
-        <h2><?php echo $resultat['nom_classe']; ?></h2>
-        <!-- Il reste 3 jours. -->
-<?php endforeach; ?>
-
-</div>
-
-
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Libellé</th> 
+                <th>Actions</th>
+            </tr>
+            <?php foreach ($recuperation_classe as $resultat): ?>
+                <tr>
+                    <td><?php echo $resultat['id'] ?></td>
+                    <td><?php echo $resultat['nom_classe'] ?></td>
+                    <td>
+                        <a href="delete_classe.php?id=<?php echo $resultat['id']; ?>">
+                            <button>Supprimer</button>
+                        </a>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+    </div>
 </body>
 </html>

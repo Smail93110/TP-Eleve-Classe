@@ -6,7 +6,7 @@ $prenom = $_POST['Prenom'] ?? '';
 $ville = $_POST['Ville'] ?? '';
 $sexe = $_POST['sexe'] ?? '';
 $date = $_POST['date'] ?? '';
-$classe_nom = $_POST['classe_id'] ?? ''; 
+// $classe_nom = $_POST['classe_id'] ?? ''; 
 $diplome_nom = $_POST['diplome_id'] ?? ''; 
 
 // Préparation de la requête pour l'insertion dans la table 'eleve'

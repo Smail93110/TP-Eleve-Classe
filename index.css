@@ -34,7 +34,7 @@ body {
 .links {
     text-align: center;
     margin-bottom: 40px;
-    animation: fadeInUp 1s ease-in-out; 
+    animation: fadeInUp 1s ease-in-out; /* Animation d'apparition */
 }
 
 .links a {
@@ -57,7 +57,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    animation: fadeInUp 1s ease-in-out; 
+    animation: fadeInUp 1s ease-in-out; /* Animation d'apparition */
 }
 
 .eleve {
@@ -86,7 +86,7 @@ body {
 .actions {
     margin-top: 20px;
     text-align: center;
-    animation: fadeIn 1s ease-in-out; 
+    animation: fadeIn 1s ease-in-out; /* Animation d'apparition */
 }
 
 .actions a {
