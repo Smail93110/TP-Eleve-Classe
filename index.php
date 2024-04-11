@@ -26,6 +26,7 @@
         <?php foreach ($recuperation as $resultat): ?>
             <div class="eleve">
                 <ul>
+               <li> ID: <?php echo $resultat['id'] ?> </li>
                 <li>Nom: <?php echo $resultat['nom']; ?></li>
 
                     <li>Prénom: <?php echo $resultat['prenom']; ?></li>
